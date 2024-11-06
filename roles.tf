@@ -1,3 +1,5 @@
+data "azurerm_subscription" "primary" {}
+
 resource "azurerm_role_definition" "reader_role" {
   name        = "Reader"
   scope       = "/subscriptions/${data.azurerm_subscription.primary.id}"
